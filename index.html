@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funciones JQuery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/funciones-jquery.css">
+</head>
+<style>
+  .container{
+    background: linear-gradient(90deg, rgb(86, 184, 146) 0%, rgb(25, 26, 82) 50%, rgb(51, 175, 144) 100%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .container div{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    width: 260px;
+    height: 240px;
+    text-align: center;
+    margin-left: 10px;
+    padding: 10px;
+    background-color: rgb(223, 238, 232);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+  h1{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: white;
+    text-shadow: black;
+  }
+  button{
+    background-color: aquamarine;
+  }
+</style>
+
+<body>
+  <div class="container" >
+    <h1>Funciones JQuery</h1>
+
+    <div class="hide">
+      <h2>Hide</h2>
+      <p id="phide">Haz click en el botón para esconder este párrafo usando "hide".</p>
+      <button id="btnhide">Hide Aquí</button>
+    </div>
+    <div class="show">
+      <h2>Show</h2>
+      <p id="pshow" style="display: none;">Este párrafo aparece usando "show".</p>
+      <button id="btnshow">Show Aquí</button>
+    </div>
+    <div class="Toggle">
+      <h2>Toggle</h2>
+      <p id="ptoggle">Muestra y oculta (alterna) usando "toggle".</p>
+      <button id="btntoggle">toggle Aquí</button>
+    </div>
+    <div class="SlideDown">
+      <h2>SlideDown</h2>
+      <p id="pslidedown" style="display: none">Aparece con animación usando "slidedown".</p>
+      <button id="btnslidedown">slideDown Aquí</button>
+    </div>
+    <div class="slideUp">
+      <h2>SlideUp</h2>
+      <p id="pslideUp">Esconde con animación usando "slideUp".</p>
+      <button id="btnslideUp">slideUp Aquí</button>
+    </div>
+    <div class="slidetoggle">
+      <h2>SlideToggle</h2>
+      <p id="pslideToggle">Alterna slideUp y slideDown con "SlideToggle".</p>
+      <button id="btnslideToggle">SlideToggle Aquí</button>
+    </div>
+    <div class="fadeIn">
+      <h2>FadeIn</h2>
+      <p id="pfadeIn" style="display: none">Este párrafo aparece desvaneciendo usando "fadeIn".</p>
+      <button id="btnfadeIn">fadeIn Aquí</button>
+    </div>
+    <div class="fadeOut">
+      <h2>fadeOut</h2>
+      <p id="pfadeOut">Desvanecer este párrafo usando "fadeOut".</p>
+      <button id="btnfadeOut">fadeOut Aquí</button>
+    </div>
+    <div class="addClass">
+      <h2>Add Class</h2>
+      <p id="paddClass">Esta función agrega clases CSS como: (bg-danger)</p>
+      <button id="btnaddClass">Add Class!</button>
+    </div>
+    <div class="before">
+      <h2>Before</h2>
+      <p id="pbefore">Agrega algo aquí arriba con "before".</p>
+      <button id="btnbefore">before Aquí</button>
+    </div>
+    <div class="after">
+      <h2>After</h2>
+      <p id="pafter">Agrega algo aquí abajo con "after".</p>
+      <button id="btnafter">after Aquí</button>
+    </div>
+    <div class="append">
+      <h2>Append</h2>
+      <p id="pappend">Añade algo al final</p>
+      <button id="btnappend">append Aquí</button>    
+    </div>
+    <div class="html">
+      <h2>Html</h2>
+      <p id="phtml">Trabaja con el html</p>
+      <button id="btnhtml">html Aquí</button> 
+    </div>
+    <div class="attr">
+      <h2>attr</h2>
+      <p id="pattr">Attr campia el type de text a email</p>
+      <p id="pattr2">Mi nombre es <input type="text" id="inputattr" </p>
+      <button id="btnattr" class="mt-2">attr Aquí</button> 
+    </div>
+    <div class="val">
+      <h2>Val</h2>
+      <p id="pval">Mi nombre es <input type="text" id="valinput" </p>
+      <button id="btnval" class="mt-2">val Aquí</button> 
+    </div>
+    <div class="text">
+      <h2>Text</h2>
+      <p id="ptext">Trae el texto</p>
+      <button id="btntext">text Aquí</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha512-iceXjjbmB2rwoX93Ka6HAHP+B76IY1z0o3h+N1PeDtRSsyeetU3/0QKJqGyPJcX63zysNehggFwMC/bi7dvMig==" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      // 2. Hide
+      $('#btnhide').on('click', function () {
+        $('#phide').hide();
+      });
+
+      //3. Show 
+      $('#btnshow').on('click', function () {
+        $('#pshow').show();
+      });
+
+      // 4. Toggle
+      $('#btntoggle').on('click', function () {
+        $('#ptoggle').toggle();
+      });
+
+      // 5. SLIDE DOWN
+      $('#btnslidedown').on('click', function () {
+        $('#pslidedown').slideDown();
+      });
+
+      // 6. slideup
+      $('#btnslideUp').on('click', function () {
+        $('#pslideUp').slideUp();
+      });
+
+      // 7. SlideToggle
+      $('#btnslideToggle').on('click', function () {
+        $('#pslideToggle').slideToggle();
+      });
+
+      // 8. FadeIn
+      $('#btnfadeIn').on('click', function () {
+        $('#pfadeIn').fadeIn();
+      });      
+
+      // 9. fadeOut
+      $('#btnfadeOut').on('click', function () {
+        $('#pfadeOut').fadeOut();
+      });      
+      // 10 ADD CLASS
+      $('#btnaddClass').on('click', function () {
+        $('#paddClass').addClass('bg-danger');
+      })
+      // 10. before
+      $('#btnbefore').on('click', function () {
+        $('#pbefore').before('   Agrego esto before al hacer click con before');
+      })
+      // 11. after
+      $('#btnafter').on('click', function () {
+        $('#pafter').after(' -->Agrego esto al final al hacer click con after');
+      })
+      // 12. append
+      $('#btnappend').on('click', function () {
+        $('#pappend').append(' -->Agrego esto al final al hacer click con append');
+      })
+      // 13. html
+      $('#btnhtml').on('click', function () {
+        $('#phtml').html('puedes ir a <a href="http://www.biobiochile.cl">Radio Bio Bio</a>');
+      });   
+      // 14. attr
+      $('#btnattr').on('click', function () {
+        $('#inputattr').attr('type', 'email');
+      });   
+      // 15. val
+      $('#btnval').on('click', function () {
+        $('#valinput').val('Agrega un nombre');
+      });   
+      // 16. text
+      $('#btntext').on('click', function () {
+        $('#ptext').text('puedes ir a <a href="http://www.biobiochile.cl">Radio Bio Bio</a>');
+      });   
+
+
+    });
+
+  </script>
+</body>
+
+</html>
